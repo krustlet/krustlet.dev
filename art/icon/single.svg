@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="1200px" viewBox="0 0 1200 1200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1 color</title>
+    <defs>
+        <circle id="path-1" cx="480.044705" cy="479.528689" r="479.234731"></circle>
+        <polygon id="path-3" points="386.737799 0.204059126 77.0135949 153.199629 0.507584304 496.989456 214.855855 772.699163 558.637748 772.699163 772.968013 496.989456 696.480008 153.199629"></polygon>
+        <path d="M62.1917906,124.343296 C27.887166,124.343296 0.0777929894,96.5339225 0.0777929894,62.2292979 C0.0777929894,27.9244418 27.887166,0.115068797 62.1917906,0.115068797 C96.4964152,0.115068797 124.30602,27.9244418 124.30602,62.2292979 C124.30602,96.5339225 96.4964152,124.343296 62.1917906,124.343296 Z" id="path-5"></path>
+        <path d="M42.2247172,83.9415479 C19.0450392,83.9415479 0.25417862,65.1506874 0.25417862,41.9705386 C0.25417862,18.7908606 19.0450392,0 42.2247172,0 C65.4043953,0 84.1952559,18.7908606 84.1952559,41.9705386 C84.1952559,65.1506874 65.4043953,83.9415479 42.2247172,83.9415479 Z" id="path-7"></path>
+        <path d="M79.1352222,157.967663 C35.5999049,157.967663 0.30736785,122.675657 0.30736785,79.1403398 C0.30736785,35.6050226 35.5999049,0.313016264 79.1352222,0.313016264 C122.670009,0.313016264 157.962546,35.6050226 157.962546,79.1403398 C157.962546,122.675657 122.670009,157.967663 79.1352222,157.967663 Z" id="path-9"></path>
+    </defs>
+    <g id="1-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(120.000000, 51.000998)">
+            <g id="Group-8" transform="translate(0.000000, 57.953967)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Oval-12" fill="#9F64DF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="Group-9" mask="url(#mask-2)">
+                    <g transform="translate(94.301394, -91.629838)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Shape" stroke="none" fill="#FFFFFF" fill-rule="nonzero" transform="translate(386.737799, 386.451611) scale(1, -1) translate(-386.737799, -386.451611) " xlink:href="#path-3"></use>
+                        <g id="Group-136" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" mask="url(#mask-4)">
+                            <g transform="translate(472.343881, 171.557528)">
+                                <mask id="mask-6" fill="white">
+                                    <use xlink:href="#path-5"></use>
+                                </mask>
+                                <g id="Clip-135" stroke="none" fill="none"></g>
+                                <polygon id="Fill-134" stroke="none" fill="#9F64DF" fill-rule="evenodd" mask="url(#mask-6)" points="-1.07984078 -1.04256497 125.463654 -1.04256497 125.463654 125.500929 -1.07984078 125.500929"></polygon>
+                            </g>
+                        </g>
+                        <path d="M386.73796,191.385961 L685.578134,338.996527 L759.48881,671.202063 L552.522263,937.439246 L220.971024,937.439246 L13.9870882,671.20206 L87.9151637,338.996524 L386.73796,191.385961 Z" id="innerk8s" stroke="#FFFFFF" stroke-width="25" fill="#9F64DF" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                    </g>
+                </g>
+                <polyline id="Path" stroke="#FFFFFF" stroke-width="25" fill-rule="nonzero" mask="url(#mask-2)" points="136.96875 316.318104 181.822556 529.108516 479.604806 674.912837 778.267025 524.3904 820.851563 337.302847"></polyline>
+            </g>
+            <g id="bubbles" transform="translate(240.731865, 0.000000)">
+                <g id="interior-core" transform="translate(97.905839, 0.325309)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="Clip-138"></g>
+                    <polygon id="Fill-137" fill="#9F64DF" mask="url(#mask-8)" points="-2.09932712 -2.35350574 86.5487616 -2.35350574 86.5487616 86.2950537 -2.09932712 86.2950537"></polygon>
+                </g>
+                <g id="bubble" transform="translate(0.000000, 179.987296)">
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <use id="Clip-141" stroke="#FFFFFF" stroke-width="50" xlink:href="#path-9"></use>
+                    <polygon id="Fill-140" fill="#9F64DF" mask="url(#mask-10)" points="-2.04613789 -2.04048948 192.494277 -2.04048948 192.494277 192.499292 -2.04613789 192.499292"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

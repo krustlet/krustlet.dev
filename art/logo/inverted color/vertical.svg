@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1750px" height="1750px" viewBox="0 0 1750 1750" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>strapline 1 color</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#4ACDFA" offset="0%"></stop>
+            <stop stop-color="#23B4E6" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="480.044705" cy="479.528689" r="479.234731"></circle>
+        <polygon id="path-4" points="386.737799 0.204059126 77.0135949 153.199629 0.507584304 496.989456 214.855855 772.699163 558.637748 772.699163 772.968013 496.989456 696.480008 153.199629"></polygon>
+        <path d="M62.1917906,124.343296 C27.887166,124.343296 0.0777929894,96.5339225 0.0777929894,62.2292979 C0.0777929894,27.9244418 27.887166,0.115068797 62.1917906,0.115068797 C96.4964152,0.115068797 124.30602,27.9244418 124.30602,62.2292979 C124.30602,96.5339225 96.4964152,124.343296 62.1917906,124.343296 Z" id="path-6"></path>
+        <linearGradient x1="48.9895683%" y1="58.1268705%" x2="48.9895683%" y2="19.2478775%" id="linearGradient-8">
+            <stop stop-color="#1A59C8" offset="0%"></stop>
+            <stop stop-color="#2A69D9" offset="100%"></stop>
+        </linearGradient>
+        <path d="M42.2247172,83.9415479 C19.0450392,83.9415479 0.25417862,65.1506874 0.25417862,41.9705386 C0.25417862,18.7908606 19.0450392,0 42.2247172,0 C65.4043953,0 84.1952559,18.7908606 84.1952559,41.9705386 C84.1952559,65.1506874 65.4043953,83.9415479 42.2247172,83.9415479 Z" id="path-9"></path>
+        <path d="M79.1352222,157.967663 C35.5999049,157.967663 0.30736785,122.675657 0.30736785,79.1403398 C0.30736785,35.6050226 35.5999049,0.313016264 79.1352222,0.313016264 C122.670009,0.313016264 157.962546,35.6050226 157.962546,79.1403398 C157.962546,122.675657 122.670009,157.967663 79.1352222,157.967663 Z" id="path-11"></path>
+    </defs>
+    <g id="strapline-1-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(395.000000, 214.000000)">
+            <g id="Group-8" transform="translate(0.000000, 57.953967)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Oval-12" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+                <g id="Group-9" mask="url(#mask-3)">
+                    <g transform="translate(94.301394, -91.629838)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Shape" stroke="none" fill="#9F64DF" fill-rule="nonzero" transform="translate(386.737799, 386.451611) scale(1, -1) translate(-386.737799, -386.451611) " xlink:href="#path-4"></use>
+                        <g id="Group-136" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" mask="url(#mask-5)">
+                            <g transform="translate(472.343881, 171.557528)">
+                                <mask id="mask-7" fill="white">
+                                    <use xlink:href="#path-6"></use>
+                                </mask>
+                                <g id="Clip-135" stroke="none" fill="none"></g>
+                                <polygon id="Fill-134" stroke="none" fill="#FD863A" fill-rule="evenodd" mask="url(#mask-7)" points="-1.07984078 -1.04256497 125.463654 -1.04256497 125.463654 125.500929 -1.07984078 125.500929"></polygon>
+                            </g>
+                        </g>
+                        <polygon id="innerk8s" stroke="none" fill="url(#linearGradient-8)" fill-rule="nonzero" mask="url(#mask-5)" points="386.737799 177.444142 77.0135949 330.439711 0.507584304 674.229539 214.855855 949.939246 558.637748 949.939246 772.968013 674.229539 696.480008 330.439711"></polygon>
+                    </g>
+                </g>
+                <g id="linbes" opacity="0.100000001" mask="url(#mask-3)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="13">
+                    <g transform="translate(-340.653058, -73.513186)">
+                        <line x1="396.754141" y1="85.660836" x2="733.611431" y2="1667.90276" id="Path-7"></line>
+                        <line x1="1251.05201" y1="92.7720356" x2="893.358187" y2="1667.90276" id="Path-8"></line>
+                        <line x1="1553.18175" y1="1131.34039" x2="64.1835338" y2="384.331084" id="Path-9"></line>
+                        <line x1="1578.30496" y1="1144.75721" x2="61.8231453" y2="385.331084" id="Path-9" transform="translate(820.064053, 765.044146) scale(-1, 1) translate(-820.064053, -765.044146) "></line>
+                        <line x1="639.643549" y1="0.562554167" x2="0.303822995" y2="788.169583" id="Path-10"></line>
+                        <line x1="1027.62903" y1="22.3406031" x2="1583.71758" y2="757.321977" id="Path-11"></line>
+                    </g>
+                </g>
+            </g>
+            <g id="bubbles" transform="translate(240.731865, 0.000000)">
+                <g id="interior-core" transform="translate(97.905839, 0.325309)">
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <g id="Clip-138"></g>
+                    <polygon id="Fill-137" fill="#FDD93A" mask="url(#mask-10)" points="-2.09932712 -2.35350574 86.5487616 -2.35350574 86.5487616 86.2950537 -2.09932712 86.2950537"></polygon>
+                </g>
+                <g id="bubble" transform="translate(0.000000, 179.987296)">
+                    <mask id="mask-12" fill="white">
+                        <use xlink:href="#path-11"></use>
+                    </mask>
+                    <use id="Clip-141" fill="#D8D8D8" xlink:href="#path-11"></use>
+                    <polygon id="Fill-140" fill="#FFFFFF" mask="url(#mask-12)" points="-2.04613789 -2.04048948 192.494277 -2.04048948 192.494277 192.499292 -2.04613789 192.499292"></polygon>
+                </g>
+            </g>
+        </g>
+        <text id="KRUSTLET" font-family="VarelaRound-Regular, Varela Round" font-size="150" font-weight="normal" letter-spacing="42.375" fill="#FFFFFF">
+            <tspan x="319" y="1524">KRUSTLET</tspan>
+        </text>
+    </g>
+</svg>
