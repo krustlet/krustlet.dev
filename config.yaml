@@ -1,0 +1,51 @@
+baseURL: https://krustlet.dev/
+languageCode: en-us
+title: Krustlet
+theme: clean-landing
+
+disableKinds:
+ -taxonomy
+ -taxonomyTerm
+
+params:
+  description: Kubernetes Kubelet in Rust for running WASM
+  openGraph: true
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+   image: logos/vertical.svg
+   link: https://krustlet.dev/
+  font:
+    name: "Varela Rounded"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Krustlet
+    # Hero subtitle (optional)
+    subtitle: 
+    # Button text
+    # buttontext: Get started
+    # Where the main hero button links to
+    # buttonlink: "#"
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Github
+    url: https://github.com/deislabs/krustlet
+  # - title: Blog
+  #   url:
+  - title: Slack
+    url: /
+  - title: Twitter
+    url: /
+  footer:
+    logo: logo.svg
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    # - link: https://twitter.com/krustlet
+    #   icon: twitter
+    #   name: Twitter
+    # - link: https://gitter.im/krustlet
+    #   icon: users
+    #   name: Gitter
+    - link: https://github.com/deislabs/krustlet
+      icon: github
+      name: Github

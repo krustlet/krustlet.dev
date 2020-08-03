@@ -1,0 +1,61 @@
+/* ==========================================================================
+Hero styles
+========================================================================== */
+
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  min-height: 48rem;
+  max-height: 768px !important;
+  background: #F8F8FC url('../images/hero.png') no-repeat center bottom;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  h2 {
+      font-size: 1.35rem;
+      font-weight: bold;
+      margin: 5vh auto 3rem;
+      padding: 0;
+      color: $brand;
+  }
+
+  img {
+    max-width: 10rem;
+    min-width: 8rem;
+  }
+}
+
+#about {
+  h4 {
+    font-weight: bold;
+  }
+
+  img {
+    float: left;
+    margin: -1rem 0 0 0.5rem;
+  }
+}
+
+.button-cta {
+  .button {
+      padding: 2.5rem 3.5rem;
+      min-width: 20vw;
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+      background-color: #5CCFF5;
+  }
+
+  p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+  }
+}
+
+#download {
+  .card {
+
+  }
+}

@@ -1,0 +1,151 @@
+{{ define "main" }}
+{{- $navbar         := .Site.Params.navbar }}
+
+<nav class="navbar no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div id="topNav" class="navbar-menu">
+      <div class="navbar-start">
+        {{- range $navbar }}
+        {{- if .sublinks }}
+        <div class="navbar-item has-dropdown is-hoverable has-text-left">
+          <a class="navbar-link" href=".url">
+            {{ .title }}
+          </a>
+        </div>
+        {{- else if .button }}
+        <a href="{{ .url }}" class="navbar-item">
+          <span class="button signup-button rounded secondary-btn raised">
+            {{ .title }}
+          </span>
+        </a>
+        {{- else }}
+        <a href="{{ .url }}" class="navbar-item is-secondary">
+          {{ .title }}
+        </a>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container intro">
+  <div class="columns is-centered">
+    <div class="column is-half has-text-centered is-centered">
+      <h1><a href="/" title="Krustlet"><img src="images/logo.svg" alt="Krustlet" /></a></h1>
+    </div>
+    <div class="column is-half has-text-right">
+      <!-- TEXT -->
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-offset-one-fifth is-three-fifths">
+      <!-- <p>TEXT</p> -->
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-offset-two-fifths is-three-fifths">
+      <!-- <p>TEXT</p> -->
+    </div>
+  </div>
+</div>
+
+<div class="container principles">
+  <div class="columns is-centered is-vcentered">
+    <div class="column is-half has-text-left">
+      <!-- <h2 class="has-text-centered">Features</h2> -->
+
+      <div class="text-align-center is-centered has-text-centered">
+        <a href="https://github.com/deislabs/krustlet/" class="button is-primary is-rounded is-large is-centered">
+          <i class="fa fa-github"></i> Learn More
+        </a>
+
+        <p><small>Check out the <a href="https://github.com/deislabs/krustlet/tree/master/docs">project docs</a> and <a href="https://github.com/deislabs/krustlet/tree/master/demos">demos</a>.</small></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section class="section section-feature-grey is-medium" id="community">
+  <div class="container">
+
+    <div class="title-wrapper has-text-centered">
+      <!-- <h3 class="title is-6">Communications</h3> -->
+    </div>
+
+    <div class="content-wrapper">
+      
+      <div class="columns has-text-centered">
+        <div class="column is-third social-wrap">
+          <a href="https://slack.kubernetes.io/" class="social-icon">
+            <!-- <span class="icon">
+              <i class="fa fa-slack"></i>
+            </span> -->
+            <!-- <h4>Slack Channel</h5>
+            <p><a href="https://slack.kubernetes.io/">Join</a> the Kubernetes Slack for related discussions in <a href="#">#openservicemesh</a></p> -->
+          </a>
+        </div>
+        <div class="column is-third social-wrap">
+          <a href="#" class="social-icon">
+            <!-- <span class="icon">
+              <i class="fa fa-users"></i>
+            </span> -->
+            <!-- <h4>Meetings</h4>
+            <p> Community meetings take place every _________ @ ________ .</p> -->
+          </a>
+        </div>
+        <div class="column is-third social-wrap">
+          <a href="https://github.com/deislabs/krustlet" class="social-icon">
+            <!-- <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span> -->
+          </a>
+          <!-- <h4>Mailing List</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="container" id="footer">
+  <div class="columns">
+    <div class="column is-one-third">
+      <a href="https://deislabs.io" class="deislabs">
+        <span>Deis Labs</span>
+        <em class="dl-tr"></em><em class="dl-sq"></em><em class="dl-ci"></em>
+      </a>
+      <p class="show-for-large-up">:  Open Source from Microsoft Azure</p>
+    </div>
+    <div class="column is-two-thirds">
+      <nav class="has-text-right">
+        <div id="footerNav" class="navbar-menu has-text-right">
+          <div class="navbar-start has-text-right">
+            {{- range $navbar }}
+            {{- if .sublinks }}
+            <div class="navbar-item has-dropdown is-hoverable has-text-left">
+              <a class="navbar-link" href=".url">
+                {{ .title }}
+              </a>
+            </div>
+            {{- else if .button }}
+            <a href="{{ .url }}" class="navbar-item">
+              <span class="button signup-button rounded secondary-btn raised">
+                {{ .title }}
+              </span>
+            </a>
+            {{- else }}
+            <a href="{{ .url }}" class="navbar-item is-secondary">
+              {{ .title }}
+            </a>
+            {{- end }}
+            {{- end }}
+          </div>
+        </div>
+      </nav>
+    </div>
+</footer>
+
+{{ end }}
