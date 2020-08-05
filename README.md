@@ -1,4 +1,4 @@
-![krustlet-website](https://github.com/deislabs/krustlet.dev/blob/master/art/styleguide/website.jpg?raw=true)
+![krustlet-website](https://github.com/deislabs/krustlet.dev/blob/main/art/styleguide/website.jpg?raw=true)
 
 Welcome to the source file repository for the [krustlet.dev](https://krustlet.dev). The website is a simple static site, built with [Hugo](https://gohugo.io/) and hosted on [Netlify](https://app.netlify.com/sites/krustlet-dev/).
 
