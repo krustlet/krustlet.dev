@@ -1,0 +1,40 @@
+{{- $navbar         := .Site.Params.navbar }}
+
+<footer class="container" id="footer">
+  <div class="columns">
+    <div class="column is-half">
+      <a href="https://deislabs.io" class="deislabs" title="Deis Labs: Open Source from Microsoft Azure">
+        <span>Deis Labs</span>
+        <em class="dl-tr"></em><em class="dl-sq"></em><em class="dl-ci"></em>
+      </a>
+      <p class="show-for-large-up">: Open Source from Microsoft Azure</p>
+    </div>
+    <div class="column is-half">
+      <nav class="has-text-right">
+        <div id="footerNav" class="navbar-menu has-text-right">
+          <div class="navbar-start has-text-right">
+            {{- range $navbar }}
+            {{- if .sublinks }}
+            <div class="navbar-item has-dropdown is-hoverable has-text-left">
+              <a class="navbar-link" href=".url">
+                {{ .title }}
+              </a>
+            </div>
+            {{- else if .button }}
+            <a href="{{ .url }}" class="navbar-item">
+              <span class="button signup-button rounded secondary-btn raised">
+                {{ .title }}
+              </span>
+            </a>
+            {{- else }}
+            <a href="{{ .url }}" class="navbar-item is-secondary">
+              {{ .title }}
+            </a>
+            {{- end }}
+            {{- end }}
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>

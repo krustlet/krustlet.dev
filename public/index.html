@@ -4,13 +4,41 @@
 	<meta name="generator" content="Hugo 0.65.3" />
     
 
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<meta name="description" content="Kubernetes Kubelet in Rust for running WASM">
+
+
+<meta property="og:title" content="Krustlet">
+<meta property="og:title" content="Krustlet">
+<meta property="og:url" content="https://krustlet.dev/">
+<meta property="og:description" content="Kubernetes Kubelet in Rust for running WASM" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://krustlet.dev/images/krustlet-twitter-card.png">
+<meta name="twitter:title" content="Krustlet">
+<meta name="twitter:description" content="Kubernetes Kubelet in Rust for running WASM">
+
+<link rel="icon" href="https://krustlet.dev/images/favicon.png" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png">
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   if(window.localStorage) {
-      ga('create', 'UA-XXXXXXXXXX-X', 'www.openservicemesh.io', {
+      ga('create', 'UA-130516746-11', 'www.openservicemesh.io', {
         'storage': 'none'
         , 'clientId': window.localStorage.getItem('ga_clientId')
       });
@@ -19,20 +47,17 @@
       });
   }
   else {
-      ga('create', 'UA-XXXXXXXXXX-X', 'www.openservicemesh.io');
+      ga('create', 'UA-130516746-11', 'www.openservicemesh.io');
   }
   ga('send', 'pageview');
 </script>
 
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Krustlet</title>
     
 <link rel="icon" type="image/png" href="https://krustlet.dev/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Varela&#43;Rounded:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.bb7dc5d1d8c0406e43c7c8edd8d3f68029fe8ec74e550a656f105d6e90176421.css" integrity="sha256-u33F0djAQG5Dx8jt2NP2gCn&#43;jsdOVQplbxBdbpAXZCE=">
+<link rel="stylesheet" type="text/css" href="/css/style.min.97b52f53da7255dd93e3ef2e7f972ab654515af85ddce28f8548d5ecd7feee7c.css" integrity="sha256-l7UvU9pyVd2T4&#43;8uf5cqtlRRWvhd3OKPhUjV7Nf&#43;7nw=">
 <link rel="stylesheet" type="text/css" href="https://krustlet.dev/css/icons.css">
 
   </head>
@@ -44,132 +69,168 @@
 
     
 
-<nav class="navbar no-shadow" role="navigation" aria-label="main navigation">
+
+
+<nav class="navbar is-hidden-touch" role="navigation" aria-label="main navigation">
   <div class="container">
+    <div class="navbar-brand">
+      <a href="/" class="navbar-item logo" title="Krustlet">
+        <img src="images/horizontal.svg" alt="Krustlet" />
+      </a>
+    </div>
     <div id="topNav" class="navbar-menu">
       <div class="navbar-start">
         <a href="https://github.com/deislabs/krustlet" class="navbar-item is-secondary">
           Github
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="https://deislabs.io/tags/krustlet/" class="navbar-item is-secondary">
+          Blog
+        </a>
+        <a href="https://kubernetes.slack.com/messages/krustlet" class="navbar-item is-secondary">
           Slack
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="https://twitter.com/krustlet" class="navbar-item is-secondary">
           Twitter
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/deislabs/krustlet" class="navbar-item is-secondary">
+          <span class="icon"><i class="fa fa-github fa-2x"></i></span>
         </a>
       </div>
     </div>
   </div>
 </nav>
 
-<div class="container intro">
-  <div class="columns is-centered">
-    <div class="column is-half has-text-left">
-      <h1><a href="/" title="Krustlet"><img src="images/horizontal.svg" alt="Krustlet" /></a></h1>
+<nav class="navbar navbar-mobile is-hidden-desktop">
+
+  <a href="/">
+    LOGO
+  </a>
+  <div>
+  <a href="https://github.com/deislabs/krustlet" class="navbar-item is-secondary">
+    Github
+  </a>
+  <a href="https://deislabs.io/tags/krustlet/" class="navbar-item is-secondary">
+    Blog
+  </a>
+  <a href="https://kubernetes.slack.com/messages/krustlet" class="navbar-item is-secondary">
+    Slack
+  </a>
+  <a href="https://twitter.com/krustlet" class="navbar-item is-secondary">
+    Twitter
+  </a>
+  </div>
+</nav>
+
+
+<div class="container home-section" id="intro">
+  <div class="columns is-multiline">
+    <div class="column is-two-thirds is-end">
+      <h1>Run Web Assembly workloads within your Kubernetes cluster.</h1>
+    </div>
+    <div class="column is-one-third">&nbsp;</div>
+  </div>
+  <div class="columns is-multiline">
+    <div class="column is-half">
+      <p>Krustlet acts as a <a href="https://k8smeetup.github.io/docs/reference/generated/kubelet/">Kubelet</a> by listening on the event stream for new pods that the scheduler assigns to it based on specific Kubernetes tolerations.</p>
     </div>
     <div class="column is-half has-text-right">
-      TEXT
+      
     </div>
   </div>
   <div class="columns">
     <div class="column is-offset-one-fifth is-three-fifths">
-      <p>TEXT</p>
+      
     </div>
   </div>
   <div class="columns">
     <div class="column is-offset-two-fifths is-three-fifths">
-      <p>TEXT</p>
-    </div>
-  </div>
-</div>
-
-<div class="container principles">
-  <div class="columns is-centered is-vcentered">
-    <div class="column is-half has-text-left">
-      <h2 class="has-text-centered">Features</h2>
-
-      <div class="text-align-center is-centered has-text-centered">
-        <a href="https://github.com/openservicemesh/osm/" class="button is-primary is-rounded is-large is-centered">
-          <i class="fa fa-github"></i> Learn More
-        </a>
-
-        <p><small>Check out the <a href="https://github.com/openservicemesh/osm/tree/main/docs">project docs</a> and <a href="https://github.com/openservicemesh/osm/blob/main/docs/installation_guide.md">installation guide</a>.</small></p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<section class="section section-feature-grey is-medium" id="community">
-  <div class="container">
-
-    <div class="title-wrapper has-text-centered">
-      <h3 class="title is-6">Communications</h3>
-    </div>
-
-    <div class="content-wrapper">
       
-      <div class="columns has-text-centered">
-        <div class="column is-third social-wrap">
-          <a href="https://slack.kubernetes.io/" class="social-icon">
-            <span class="icon">
-              <i class="fa fa-slack"></i>
-            </span>
-            <h4>Slack Channel</h5>
-            <p><a href="https://slack.kubernetes.io/">Join</a> the Kubernetes Slack for related discussions in <a href="#">#openservicemesh</a></p>
-          </a>
-        </div>
-        <div class="column is-third social-wrap">
-          <a href="#" class="social-icon">
-            <span class="icon">
-              <i class="fa fa-users"></i>
-            </span>
-            <h4>Meetings</h4>
-            <p> Community meetings take place every _________ @ ________ .</p>
-          </a>
-        </div>
-        <div class="column is-third social-wrap">
-          <a href="https://github.com/openservicemesh/osm" class="social-icon">
-            <span class="icon">
-              <i class="fa fa-envelope"></i>
-            </span>
-          </a>
-          <h4>Mailing List</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-        </div>
-      </div>
-
     </div>
   </div>
-</section>
+</div>
+
+<div class="container home-section" id="features">
+
+  <div class="has-text-centered">
+    <h3>Features</h3>
+  </div>
+  
+</div>
+
+<div class="container home-section" id="community">
+
+  <div class="has-text-centered">
+    <h3>Community</h3>
+  </div>
+
+
+  https://www.explorewasm.com/
+
+</div>
+
+<div class="container" id="contributors">
+
+  <div class="title-wrapper has-text-centered">
+    <h3>Brought to you by collaborations from:</h3>
+  </div>
+
+  <div class="content-wrapper is-mobile columns">
+    <div class="column is-half">
+      <figure class="image">
+        <a href="https://azure.microsoft.com/"><img src="images/microsoft.png" alt="Microsoft"></a>
+      </figure>
+
+    </div>
+    <div class="column is-half">
+      <figure class="image">
+        <a href="https://medium.com/capital-one-tech"><img src="images/capitalone.png" alt="CapitalOne"></a>
+      </figure>
+    </div>
+  </div>
+
+  <div class="has-text-centered blog-link">
+    <p>Read the Krustlet <a href="https://deislabs.io/posts/introducing-krustlet/">announcement</a> blog post.</p>
+  </div>
+
+</div>
+
+
 
 <footer class="container" id="footer">
   <div class="columns">
-    <div class="column is-one-third">
-      <a href="https://deislabs.io" class="deislabs">
+    <div class="column is-half">
+      <a href="https://deislabs.io" class="deislabs" title="Deis Labs: Open Source from Microsoft Azure">
         <span>Deis Labs</span>
         <em class="dl-tr"></em><em class="dl-sq"></em><em class="dl-ci"></em>
       </a>
-      <p class="show-for-large-up">:  Open Source from Microsoft Azure</p>
+      <p class="show-for-large-up">: Open Source from Microsoft Azure</p>
     </div>
-    <div class="column is-two-thirds">
+    <div class="column is-half">
       <nav class="has-text-right">
         <div id="footerNav" class="navbar-menu has-text-right">
           <div class="navbar-start has-text-right">
             <a href="https://github.com/deislabs/krustlet" class="navbar-item is-secondary">
               Github
             </a>
-            <a href="/" class="navbar-item is-secondary">
+            <a href="https://deislabs.io/tags/krustlet/" class="navbar-item is-secondary">
+              Blog
+            </a>
+            <a href="https://kubernetes.slack.com/messages/krustlet" class="navbar-item is-secondary">
               Slack
             </a>
-            <a href="/" class="navbar-item is-secondary">
+            <a href="https://twitter.com/krustlet" class="navbar-item is-secondary">
               Twitter
             </a>
           </div>
         </div>
       </nav>
     </div>
+  </div>
 </footer>
+
 
 
 
@@ -178,43 +239,9 @@
 
     
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://krustlet.dev/js/landing.js"></script>
-<script src="https://krustlet.dev/js/jquery.panelslider.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script>
-    function openTab(evt, tabTitle) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabTitle).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
-  <script>
-    var clipboard = new ClipboardJS('.button');
 
-    
-    clipboard.on('success', function(e) {
-        e.clearSelection();
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        showTooltip(e.trigger, 'Copied!');
-    });
-    clipboard.on('error', function(e) {
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        showTooltip(e.trigger, fallbackMessage(e.action));
-    });
-  </script>
   </body>
 </html>

@@ -1,7 +1,31 @@
-{{ template "_internal/google_analytics_async.html" . }}
+{{ $desc   := .Param "description" }}
+{{ $title  := .Title }}
+{{ $url    := .Permalink }}
+{{ $img    := "images/favicon.png" | absURL }}
+{{ $og_img := "images/osm-twitter-card.png" | relURL }}
+{{ $icon   := "images/apple-touch-icon.png" | relURL }}
 
-{{ partial "analytics.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+{{ with $desc }}
+<meta name="description" content="{{ . }}">
+{{ end }}
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:description" content="{{ $desc }}" />
+
+{{ if .Params.twittertype }}<meta name="twitter:card" content="{{ .Params.twittertype }}">{{ else }}<meta name="twitter:card" content="{{ .Site.Params.twittertype }}">{{ end }}
+{{ if .Params.twitterimage }}<meta name="twitter:image" content="{{ .Params.twitterimage | absURL }}">{{ else }}<meta name="twitter:image" content="{{ .Site.Params.twitterimage | absURL }}">{{ end }}
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+
+<link rel="icon" href="{{ $img }}" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="{{ $icon }}">
+
+{{ partial "analytics.html" . }}

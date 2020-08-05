@@ -1,31 +1,21 @@
 {{- $navbar         := .Site.Params.navbar }}
-{{- $sidebarVisible := .Site.Params.sidebar }}
-{{ if .Params.sidebar }}
-{{ $sidebarVisible = .Params.sidebar }}
-{{ end }}
-{{- $navbarLogo     := .Site.Params.navbarlogo }}
-<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+
+<nav class="navbar is-hidden-touch" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+      <a href="/" class="navbar-item logo" title="Krustlet">
+        <img src="images/horizontal.svg" alt="Krustlet" />
       </a>
     </div>
-
-    <div id="navbar-menu" class="navbar-menu is-static">
-
-      <div class="navbar column is-half navbar-center">
+    <div id="topNav" class="navbar-menu">
+      <div class="navbar-start">
         {{- range $navbar }}
         {{- if .sublinks }}
-        <div class="navbar-item has-dropdown is-hoverable has-text-centered">
+        <div class="navbar-item has-dropdown is-hoverable has-text-left">
           <a class="navbar-link" href=".url">
             {{ .title }}
           </a>
         </div>
-        
         {{- else if .button }}
         <a href="{{ .url }}" class="navbar-item">
           <span class="button signup-button rounded secondary-btn raised">
@@ -39,7 +29,40 @@
         {{- end }}
         {{- end }}
       </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/deislabs/krustlet" class="navbar-item is-secondary">
+          <span class="icon"><i class="fa fa-github fa-2x"></i></span>
+        </a>
+      </div>
     </div>
-    
+  </div>
+</nav>
+
+<nav class="navbar navbar-mobile is-hidden-desktop">
+
+  <a href="/">
+    LOGO
+  </a>
+  <div>
+  {{- range $navbar }}
+  {{- if .sublinks }}
+  <div class="navbar-item has-dropdown is-hoverable has-text-left">
+    <a class="navbar-link" href=".url">
+      {{ .title }}
+    </a>
+  </div>
+  {{- else if .button }}
+  <a href="{{ .url }}" class="navbar-item">
+    <span class="button signup-button rounded secondary-btn raised">
+      {{ .title }}
+    </span>
+  </a>
+  {{- else }}
+  <a href="{{ .url }}" class="navbar-item is-secondary">
+    {{ .title }}
+  </a>
+  {{- end }}
+  {{- end }}
   </div>
 </nav>

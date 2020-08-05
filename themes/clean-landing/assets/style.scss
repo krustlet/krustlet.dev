@@ -1,77 +1,271 @@
 @import "bulma/bulma";
 @import "clean/core";
 
+// Krustlet Colors
+// ---------------------------------------
+$purple: #8B4FD7;
+$blue: $purple;
+$orange: #F86531;
+$teal: #03D9D0;
+
+$darkblue: #001F7F;
+$darkgrey: #4F5074;
+$shadeblue: #E3E4E5;
+$shadegrey: #EDF1EE;
+
+$bluel: #2CBDFE;
+$yellow: #F7CC42;
+$salmon: #FDEDF0;
+
+
+// Mixins
+// ---------------------------------------
+@mixin varelaRound {
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: 0.0125em;
+}
+
+@mixin fullWidth {
+  min-width: 100%;
+  min-height: 480px;
+  
+  .columns {
+    max-width: 1152px;
+    width: 1152px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin transition($property:all, $duration:0.3s, $easing:ease-in-out) {
+  transition: $property $duration $easing;
+}
+
+@mixin border-radius($radius1:3px, $radius2:3px) {
+  -webkit-border-radius: $radius1 $radius2 $radius1 $radius2;
+  -moz-border-radius: $radius1 $radius2 $radius1 $radius2;
+  border-radius: $radius1 $radius2 $radius1 $radius2;
+}
+
+@mixin box-shadow($xlength:0, $ylength:2px, $size:0, $color:rgba(30,30,30,0.25)) {
+  -webkit-box-shadow: $xlength $ylength $size $color;
+  -moz-box-shadow: $xlength $ylength $size $color;
+  box-shadow: $xlength $ylength $size $color;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin corner($corner: 0.5rem, $cornertop: -1rem, $cornerleft: -1rem, $cornerbottom: auto, $cornerright: auto) {
+  width: $corner;
+  height: ($corner * 4);
+  display: inline-block;
+  content: "";
+  background-color: $purple;
+  position: absolute;
+  left: $cornerleft;
+  top: $cornertop;
+  bottom: $cornerbottom;
+  right: $cornerright;
+}
+
+@mixin ripple($color: $purple) {
+  position: relative;
+  text-align: center;
+  @include transition;
+  
+  &::after {
+    position: absolute;
+    bottom: -6px;
+    left: 45%;
+    width: 10%;
+    height: 4px;
+    display: inline-block;
+    content: "";
+    opacity: 0;
+    background-color: $color;
+    @include transition;
+  }
+
+  &:hover::after {
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@mixin wipe($color: $teal) {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  @include transition;
+  
+  &::after {
+    position: absolute;
+    left: -20%;
+    top: 125%;
+    width: 200%;
+    height: 150%;
+    display: inline-block;
+    background-blend-mode: overlay;
+    content: "";
+    opacity: 0;
+    background-color: $color !important;
+    transform: rotate(-15deg);
+    z-index: -10;
+    @include transition;
+  }
+
+  &:hover {
+    color: white;
+    background-color: transparent !important;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    top: 0%;
+    transform: rotate(0deg);
+  }
+}
+
+@mixin button($color: $purple) {
+  box-sizing: border-box;
+  font-family: $workbold;
+  color: $color;
+  width: 15rem;
+  height: 4.5rem;
+  margin: 2rem auto;
+  line-height: 3;
+  padding: 0 2rem;
+  border: 4px solid $color;
+  z-index: 600;
+  background: transparent !important;
+}
+
+
+// Krustlet Layout
+// ---------------------------------------
+
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.94);
-}
+  background: rgba(255,255,255,0.99);
 
-.intro {
-  padding: 6rem 0 12rem;
-
-  h1 {
-    max-width: 25rem;
-    margin-top: 7.5vw;
-    margin-bottom: 8vw;
+  .navbar-item {
+    @include ripple;
   }
 
-  h2 {
-    max-width: 25rem;
-    float: right;
-    margin-top: 1.5vw;
+  .navbar-brand {
+    img {
+      min-height: 6rem;
+    }
+  }
+}
+
+
+// homepage sections
+
+#intro,
+#contributors {
+  @include fullWidth;
+}
+
+#intro {
+  padding: 10rem 0 7rem;
+  background-color: $darkgrey;
+  background-image: 
+    url('../images/krustlet-deco.png'),
+    url('../images/krustlet-bg.jpg');
+  background-repeat: no-repeat;
+  background-position:
+    right bottom,
+    center top;
+  min-height: 50vw;
+
+  h1,
+  p {
+    @include varelaRound;
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+
+  h1 {
+    margin: 2rem 0;
+    font-size: 3rem;
+    line-height: 1.5;
   }
 
   p {
     font-size: 1.5rem;
+    padding: 0 7.5% 0 0;
+
   }
 }
 
-body {
-  p,
-  ul,
-  li {
-    font-size: 1.25rem;
-    line-height: 1.636;
+.home-section,
+.content-section {
+  h1, h2, h3, h4, p.lead, blockquote {
+    @include varelaRound;
+  }
+
+  a {
+    @include ripple;
+    background: RGBA(164, 115, 220, 0.125);
+    padding-left: 0.425rem;
+    padding-right: 0.425rem;
+
   }
 }
 
-.principles {
-  padding-top: 2.5rem;
-  padding-bottom: 8.5rem;
+#contributors {
+  background: linear-gradient(180deg, lighten($purple, 30%) 0%, lighten($shadeblue, 5%) 100%);
 
-  h2 {
-    font-size: 2rem;
-    margin: 2rem auto;
-  }
-  ul {
-    margin: 2rem auto 4rem;
-
-    li {
-      font-size: 1.333rem;
-      list-style: disc;
-      line-height: 1.825;
-      margin-bottom: 1rem;
-    }
-
-  }
-
-  .button {
-    font-size: 2rem;
-    padding: 1.75rem 3rem;
-    margin: 2rem 0 2rem;
-
-    .fa {
-      margin: 0 1.25rem 0 0;
+  .image {
+    min-height: 6rem;
+    text-align: center;
+    
+    img {
+      width: auto;
+      min-width: 4rem;
+      max-height: 6rem;
+      margin: 0 auto;
     }
   }
+
+  .blog-link {
+    text-align: center;
+
+    p {
+      background: #E8EFFD;
+      border-radius: 2rem;
+      display: inline-block;
+      padding: 1rem 3rem;
+      margin: -1.5rem auto 0;
+    }
+  }
 }
 
-footer {
+#footer {
   width: 100%;
   max-width: 100%;
-  border-top: 1px solid rgba(100,100,100,0.125);
-  padding: 2.5rem 0 5rem;
+  border-top: 2px solid rgba(100,100,100,0.125);
+  padding: 2.5rem 0 3.5rem !important;
+
+  .columns {
+    max-width: 1140px;
+    min-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   img {
     max-width: 12.5vw;
@@ -80,5 +274,43 @@ footer {
   .navbar-menu {
     direction: ltr;
 
+  }
+}
+
+// mobile styles
+@media screen and (max-width:1087px) {
+  body {
+    overflow-x: hidden !important;
+    width: 100vw;
+    font-size: 14px;
+  }
+
+  .navbar {
+    background: transparent !important;
+  }
+
+  .navbar-mobile {
+    position: relative;
+    text-align: center;
+    background: transparent !important;
+    border-bottom: 2px solid RGBA(194, 215, 240, 0.1);
+
+    img {
+      max-width: 12rem;
+      margin: 0 auto;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    a.navbar-item {
+      border-bottom: 2px solid lighten(#ccc, 10);
+      display: inline-block;
+      font-size: 1.125rem;
+      padding: 0.25rem 0;
+      text-align: center;
+      margin: 1rem 4vw -2px;
+    }
   }
 }

@@ -1,38 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="{{ "js/landing.js" | absURL }}"></script>
-<script src="{{ "js/jquery.panelslider.min.js" | absURL }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script>
-    function openTab(evt, tabTitle) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabTitle).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
-  <script>
-    var clipboard = new ClipboardJS('.button');
-
-    // var clipboardDemos = new ClipboardJS('[data-clipboard-demo]');
-    clipboard.on('success', function(e) {
-        e.clearSelection();
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        showTooltip(e.trigger, 'Copied!');
-    });
-    clipboard.on('error', function(e) {
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        showTooltip(e.trigger, fallbackMessage(e.action));
-    });
-  </script>

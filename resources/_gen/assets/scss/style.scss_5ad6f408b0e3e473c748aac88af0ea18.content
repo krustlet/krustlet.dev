@@ -6389,17 +6389,17 @@ Fresh Footer
         background-size: contain;
         left: 0;
         bottom: 1.8rem; }
-    #footer .deislabs a.deislabs {
-      display: inline-block;
-      width: 5.5rem;
-      height: 7.3rem; }
-      #footer .deislabs a.deislabs:hover em.dl-tr {
-        left: 2.2rem;
-        top: 2.5rem; }
-      #footer .deislabs a.deislabs:hover em.dl-sq {
-        right: 2.5rem; }
-      #footer .deislabs a.deislabs:hover em.dl-ci {
-        bottom: 4.2rem; }
+  #footer a.deislabs {
+    display: inline-block;
+    width: 5.5rem;
+    height: 7.3rem; }
+    #footer a.deislabs:hover em.dl-tr {
+      left: 2.2rem;
+      top: 2.5rem; }
+    #footer a.deislabs:hover em.dl-sq {
+      right: 2.5rem; }
+    #footer a.deislabs:hover em.dl-ci {
+      bottom: 4.2rem; }
   #footer p {
     margin: -0.45rem 0 0;
     font-size: 1rem;
@@ -7177,55 +7177,158 @@ pre {
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.94); }
+  background: rgba(255, 255, 255, 0.99); }
+  .navbar .navbar-item {
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease-in-out; }
+    .navbar .navbar-item::after {
+      position: absolute;
+      bottom: -6px;
+      left: 45%;
+      width: 10%;
+      height: 4px;
+      display: inline-block;
+      content: "";
+      opacity: 0;
+      background-color: #8B4FD7;
+      transition: all 0.3s ease-in-out; }
+    .navbar .navbar-item:hover::after {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+      bottom: 0; }
+  .navbar .navbar-brand img {
+    min-height: 6rem; }
 
-.intro {
-  padding: 6rem 0 12rem; }
-  .intro h1 {
-    max-width: 25rem;
-    margin-top: 7.5vw;
-    margin-bottom: 8vw; }
-  .intro h2 {
-    max-width: 25rem;
-    float: right;
-    margin-top: 1.5vw; }
-  .intro p {
-    font-size: 1.5rem; }
+#intro,
+#contributors {
+  min-width: 100%;
+  min-height: 480px; }
+  #intro .columns,
+  #contributors .columns {
+    max-width: 1152px;
+    width: 1152px;
+    margin-left: auto;
+    margin-right: auto; }
 
-body p,
-body ul,
-body li {
-  font-size: 1.25rem;
-  line-height: 1.636; }
+#intro {
+  padding: 10rem 0 7rem;
+  background-color: #4F5074;
+  background-image: url("../images/krustlet-deco.png"), url("../images/krustlet-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom, center top;
+  min-height: 50vw; }
+  #intro h1,
+  #intro p {
+    font-family: 'Varela Round', sans-serif;
+    letter-spacing: 0.0125em;
+    color: white; }
+    #intro h1 a,
+    #intro p a {
+      color: white; }
+  #intro h1 {
+    margin: 2rem 0;
+    font-size: 3rem;
+    line-height: 1.5; }
+  #intro p {
+    font-size: 1.5rem;
+    padding: 0 7.5% 0 0; }
 
-.principles {
-  padding-top: 2.5rem;
-  padding-bottom: 8.5rem; }
-  .principles h2 {
-    font-size: 2rem;
-    margin: 2rem auto; }
-  .principles ul {
-    margin: 2rem auto 4rem; }
-    .principles ul li {
-      font-size: 1.333rem;
-      list-style: disc;
-      line-height: 1.825;
-      margin-bottom: 1rem; }
-  .principles .button {
-    font-size: 2rem;
-    padding: 1.75rem 3rem;
-    margin: 2rem 0 2rem; }
-    .principles .button .fa {
-      margin: 0 1.25rem 0 0; }
+.home-section h1, .home-section h2, .home-section h3, .home-section h4, .home-section p.lead, .home-section blockquote,
+.content-section h1,
+.content-section h2,
+.content-section h3,
+.content-section h4,
+.content-section p.lead,
+.content-section blockquote {
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: 0.0125em; }
 
-footer {
+.home-section a,
+.content-section a {
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  background: RGBA(164, 115, 220, 0.125);
+  padding-left: 0.425rem;
+  padding-right: 0.425rem; }
+  .home-section a::after,
+  .content-section a::after {
+    position: absolute;
+    bottom: -6px;
+    left: 45%;
+    width: 10%;
+    height: 4px;
+    display: inline-block;
+    content: "";
+    opacity: 0;
+    background-color: #8B4FD7;
+    transition: all 0.3s ease-in-out; }
+  .home-section a:hover::after,
+  .content-section a:hover::after {
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    bottom: 0; }
+
+#contributors {
+  background: linear-gradient(180deg, #ddccf3 0%, #f0f1f1 100%); }
+  #contributors .image {
+    min-height: 6rem;
+    text-align: center; }
+    #contributors .image img {
+      width: auto;
+      min-width: 4rem;
+      max-height: 6rem;
+      margin: 0 auto; }
+  #contributors .blog-link {
+    text-align: center; }
+    #contributors .blog-link p {
+      background: #E8EFFD;
+      border-radius: 2rem;
+      display: inline-block;
+      padding: 1rem 3rem;
+      margin: -1.5rem auto 0; }
+
+#footer {
   width: 100%;
   max-width: 100%;
-  border-top: 1px solid rgba(100, 100, 100, 0.125);
-  padding: 2.5rem 0 5rem; }
-  footer img {
+  border-top: 2px solid rgba(100, 100, 100, 0.125);
+  padding: 2.5rem 0 3.5rem !important; }
+  #footer .columns {
+    max-width: 1140px;
+    min-width: 75vw;
+    margin-left: auto;
+    margin-right: auto; }
+  #footer img {
     max-width: 12.5vw; }
-  footer .navbar-menu {
+  #footer .navbar-menu {
     direction: ltr; }
+
+@media screen and (max-width: 1087px) {
+  body {
+    overflow-x: hidden !important;
+    width: 100vw;
+    font-size: 14px; }
+  .navbar {
+    background: transparent !important; }
+  .navbar-mobile {
+    position: relative;
+    text-align: center;
+    background: transparent !important;
+    border-bottom: 2px solid RGBA(194, 215, 240, 0.1); }
+    .navbar-mobile img {
+      max-width: 12rem;
+      margin: 0 auto; }
+    .navbar-mobile nav {
+      width: 100%; }
+    .navbar-mobile a.navbar-item {
+      border-bottom: 2px solid #e6e6e6;
+      display: inline-block;
+      font-size: 1.125rem;
+      padding: 0.25rem 0;
+      text-align: center;
+      margin: 1rem 4vw -2px; } }
 
 /*# sourceMappingURL=style.css.map */

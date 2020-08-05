@@ -59,24 +59,24 @@ Fresh Footer
         bottom: 1.8rem;
       }
     }
+  }
 
-    a.deislabs {
-      display: inline-block;
-      width: 5.5rem;
-      height: 7.3rem;
-      
-      &:hover {
-        em {
-          &.dl-tr {
-            left: 2.2rem;
-            top: 2.5rem;
-          }
-          &.dl-sq {
-            right: 2.5rem;
-          }
-          &.dl-ci {
-            bottom: 4.2rem;
-          }
+  a.deislabs {
+    display: inline-block;
+    width: 5.5rem;
+    height: 7.3rem;
+    
+    &:hover {
+      em {
+        &.dl-tr {
+          left: 2.2rem;
+          top: 2.5rem;
+        }
+        &.dl-sq {
+          right: 2.5rem;
+        }
+        &.dl-ci {
+          bottom: 4.2rem;
         }
       }
     }
