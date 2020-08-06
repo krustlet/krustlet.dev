@@ -7235,8 +7235,7 @@ body {
 
 #intro,
 #contributors {
-  min-width: 100%;
-  min-height: 100vh; }
+  min-width: 100%; }
   #intro .columns,
   #contributors .columns {
     max-width: 1152px;
@@ -7334,12 +7333,18 @@ body {
     line-height: 1.5; }
   .home-section h2,
   .content-section h2 {
-    font-size: 2.5 0.75rem; }
+    font-size: 2.75rem; }
   .home-section h3,
   .content-section h3 {
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.125em; }
+  .home-section h4,
+  .content-section h4 {
+    font-size: 1.5rem; }
+  .home-section hr,
+  .content-section hr {
+    margin: 5.5rem auto; }
 
 #community {
   min-height: 100vh;
@@ -7349,8 +7354,7 @@ body {
   background-position: 0 0, 5px 35px;
   background-size: auto auto, 12.5% auto;
   overflow: hidden;
-  min-width: 100%;
-  min-height: 100vh; }
+  min-width: 100%; }
   #community .columns {
     max-width: 1152px;
     width: 1152px;
@@ -7383,25 +7387,31 @@ body {
       color: #20bc56; }
     #community .social-wrap article p {
       font-size: 1.125rem; }
+  #community figure.image img {
+    width: auto;
+    max-height: 7.5rem;
+    margin-left: auto;
+    margin-right: auto; }
+  #community a {
+    position: relative;
+    z-index: 880; }
+  #community .blog-link {
+    display: inline-block;
+    border-radius: 3rem;
+    padding: 0 3rem;
+    margin: 3.5rem auto 7.5rem;
+    background: rgba(255, 255, 255, 0.92); }
 
 #contributors {
   background: linear-gradient(180deg, #ddccf3 0%, #f0f1f1 100%); }
   #contributors .image {
-    min-height: 6rem;
+    min-height: 8rem;
     text-align: center; }
     #contributors .image img {
       width: auto;
       min-width: 4rem;
       max-height: 6rem;
       margin: 0 auto; }
-  #contributors .blog-link {
-    text-align: center; }
-    #contributors .blog-link p {
-      background: #E8EFFD;
-      border-radius: 2rem;
-      display: inline-block;
-      padding: 1rem 3rem;
-      margin: -1.5rem auto 0; }
 
 #footer {
   width: 100%;

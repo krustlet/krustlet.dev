@@ -27,7 +27,6 @@ $salmon: #FDEDF0;
 
 @mixin fullWidth {
   min-width: 100%;
-  min-height: 100vh;
   
   .columns {
     max-width: 1152px;
@@ -36,6 +35,11 @@ $salmon: #FDEDF0;
     margin-right: auto;
   }
 }
+
+@mixin fullHeight {
+  min-height: 100vh;
+}
+
 
 @mixin transition($property:all, $duration:0.3s, $easing:ease-in-out) {
   transition: $property $duration $easing;
@@ -273,12 +277,20 @@ body {
   }
 
   h2 {
-    font-size: 2.5.75rem;
+    font-size: 2.75rem;
   }
 
   h3 {
     font-size: 2.5rem;
     @include upperCase;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  hr {
+    margin: 5.5rem auto;
   }
 }
 
@@ -346,13 +358,32 @@ body {
     }
   }
 
+  figure.image img {
+    width: auto;
+    max-height: 7.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    position: relative;
+    z-index: 880;
+  }
+
+  .blog-link {
+    display: inline-block;
+    border-radius: 3rem;
+    padding: 0 3rem;
+    margin: 3.5rem auto 7.5rem;
+    background: rgba(255,255,255,0.92);
+  }
 }
 
 #contributors {
   background: linear-gradient(180deg, lighten($purple, 30%) 0%, lighten($shadeblue, 5%) 100%);
 
   .image {
-    min-height: 6rem;
+    min-height: 8rem;
     text-align: center;
     
     img {
@@ -360,18 +391,6 @@ body {
       min-width: 4rem;
       max-height: 6rem;
       margin: 0 auto;
-    }
-  }
-
-  .blog-link {
-    text-align: center;
-
-    p {
-      background: #E8EFFD;
-      border-radius: 2rem;
-      display: inline-block;
-      padding: 1rem 3rem;
-      margin: -1.5rem auto 0;
     }
   }
 }
