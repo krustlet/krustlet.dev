@@ -7435,10 +7435,11 @@ body {
 
 @keyframes wowzers {
   0% {
-    fill-opacity: 1; }
+    fill-opacity: 1;
+    transform: rotate(0deg); }
   100% {
     fill-opacity: 0;
-    transform: translateY(110vh); } }
+    transform: rotate(6deg) translateY(110vh); } }
   .krustparty span.wow {
     content: " ";
     position: absolute;
