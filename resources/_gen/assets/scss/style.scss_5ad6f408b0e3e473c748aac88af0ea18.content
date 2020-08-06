@@ -7246,25 +7246,59 @@ body {
 
 #intro {
   padding: 18.5rem 0 7rem;
-  background-color: #4F5074;
-  background-image: url("../images/krustlet-deco.png"), url("../images/krustlet-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: 150% bottom, center top;
-  background-size: auto 75vh, auto auto;
   margin-top: -7rem;
-  z-index: 2; }
+  z-index: 10;
+  position: relative; }
+  #intro:before {
+    position: absolute;
+    z-index: -15;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    background-color: #4F5074;
+    background-image: url("../images/krustlet-deco.png"), url("../images/krustlet-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 150% bottom, center top;
+    background-size: auto 75vh, auto auto; }
   #intro h1,
   #intro p {
     font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.0125em;
     color: white;
-    z-index: 600; }
+    z-index: 850;
+    position: relative; }
+    #intro h1 .fa,
+    #intro p .fa {
+      color: #03D9D0; }
     #intro h1 strong,
     #intro p strong {
       color: white; }
     #intro h1 a,
     #intro p a {
-      color: white; }
+      color: white;
+      position: relative;
+      text-align: center;
+      transition: all 0.3s ease-in-out; }
+      #intro h1 a::after,
+      #intro p a::after {
+        position: absolute;
+        bottom: -6px;
+        left: 45%;
+        width: 10%;
+        height: 4px;
+        display: inline-block;
+        content: "";
+        opacity: 0;
+        background-color: #8B4FD7;
+        transition: all 0.3s ease-in-out; }
+      #intro h1 a:hover::after,
+      #intro p a:hover::after {
+        width: 100%;
+        opacity: 1;
+        left: 0;
+        bottom: 0; }
   #intro h1 {
     padding-right: 15vw; }
   #intro p {
@@ -7396,7 +7430,7 @@ body {
   left: 0;
   right: 0;
   overflow: hidden;
-  z-index: 30;
+  z-index: 11;
   transition: all 0.3s ease-in-out; }
   .krustparty.cease {
     left: 110%;
@@ -7405,7 +7439,7 @@ body {
     position: fixed;
     right: 3rem;
     bottom: 3rem;
-    z-index: 350;
+    z-index: 850;
     border-radius: 3rem; }
     .krustparty .controls aside {
       background: #edecff;
@@ -7480,6 +7514,7 @@ body {
   .krustparty span.wow {
     content: " ";
     position: absolute;
+    z-index: 770;
     top: 0;
     left: 0;
     display: block;

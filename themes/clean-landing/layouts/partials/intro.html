@@ -1,14 +1,14 @@
 <div class="container home-section" id="intro">
   <div class="columns is-multiline">
     <div class="column is-full is-end">
-      <h1>Run WebAssembly workloads within your Kubernetes cluster.</h1>
+      <h1>Run WebAssembly workloads in your Kubernetes cluster.</h1>
     </div>
     <!-- <div class="column is-one-third">&nbsp;</div> -->
   </div>
   <div class="columns is-multiline">
     <div class="column is-half">
       <p>Krustlet is a <a href="https://k8smeetup.github.io/docs/reference/generated/kubelet/" class="ripple">Kubelet</a> written in Rust &mdash; which listens on the event stream for new pods that the scheduler assigns to it, based on specific Kubernetes <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">tolerations</a>.</p>
-      <p>Krustlet is experimental. Learn more <span class="icon"><i class="fa fa-arrow-right"></i></span></p>
+      <p>Krustlet is experimental. <a href="https://github.com/deislabs/krustlet">Learn more <small><span class="icon"><i class="fa fa-chevron-right"></i></span></small></a></p>
     </div>
     <div class="column is-half has-text-right">
       <!-- TEXT -->
@@ -24,4 +24,6 @@
       <!-- <p>TEXT</p> -->
     </div>
   </div>
+
+  {{ partial "party.html" . }}
 </div>

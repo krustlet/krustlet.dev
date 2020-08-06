@@ -193,23 +193,39 @@ body {
 
 #intro {
   padding: 18.5rem 0 7rem;
-  background-color: $darkgrey;
-  background-image: 
-    url('../images/krustlet-deco.png'),
-    url('../images/krustlet-bg.jpg');
-  background-repeat: no-repeat;
-  background-position:
-    150% bottom,
-    center top;
-  background-size: auto 75vh, auto auto;
   margin-top: -7rem;
-  z-index: 2;
+  z-index: 10;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    z-index: -15;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    background-color: $darkgrey;
+    background-image: 
+      url('../images/krustlet-deco.png'),
+      url('../images/krustlet-bg.jpg');
+    background-repeat: no-repeat;
+    background-position:
+      150% bottom,
+      center top;
+    background-size: auto 75vh, auto auto;
+  }
 
   h1,
   p {
     @include varelaRound;
     color: white;
-    z-index: 600;
+    z-index: 850;
+    position: relative;
+
+    .fa {
+      color: $teal;
+    }
 
     strong {
       color: white;
@@ -217,6 +233,7 @@ body {
 
     a {
       color: white;
+      @include ripple;
     }
   }
 
@@ -385,9 +402,9 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; 
   overflow: hidden;
-  z-index: 30;
+  z-index: 11;
   @include transition;
 
   &.cease {
@@ -399,7 +416,7 @@ body {
     position: fixed;
     right: 3rem;
     bottom: 3rem;
-    z-index: 350;
+    z-index: 850;
     border-radius: 3rem;
     
     aside {
@@ -508,6 +525,7 @@ body {
   span.wow {
     content: " ";
     position: absolute;
+    z-index: 770;
     top: 0;
     left: 0;
     display: block;
