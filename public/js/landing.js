@@ -37,13 +37,23 @@ $(document).ready(function(){
   });
 
   // add or remove wow stuff
-  var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
-  var wowRange = ['wa', 'rust', 'k8s'];
-  var randomWow = wowRange[Math.floor(Math.random()*wowRange.length)];
-  var nWow = '<span class="wow wow-' + wowRange[Math.floor(Math.random()*wowRange.length)] + '" style="left: ' + nLeft + 'px"></span>';
+  $('.krustparty').on('click', 'a.fa-plus', function(e) {
+    var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
+    var wowRange = ['wa', 'rust', 'k8s'];
+    var randomWow = wowRange[Math.floor(Math.random()*wowRange.length)];
+    var nWow = '<span class="wow wow-' + randomWow + '" style="left: ' + nLeft + 'px; top: 105px;"></span>';
 
-  $('.krustparty').on('click', 'a.fa-plus', function () {
     $(".krustparty").append(nWow);
+  });
+
+  $('.krustparty').on('click', '.control-wa a.fa-minus', function(e) {
+    $(".krustparty > .wow-wa:last-child").remove();
+  });
+  $('.krustparty').on('click', '.control-rust a.fa-minus', function(e) {
+    $(".krustparty > .wow-rust:last-child").remove();
+  });
+  $('.krustparty').on('click', '.control-k8s a.fa-minus', function(e) {
+    $(".krustparty > .wow-k8s:last-child").remove();
   });
 
 });
