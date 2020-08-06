@@ -7424,7 +7424,7 @@ body {
       .krustparty .controls aside .fa {
         color: #8B4FD7;
         opacity: 0.5;
-        margin-left: -3px;
+        margin-left: -2px;
         transition: all 0.3s ease-in-out; }
         .krustparty .controls aside .fa:hover {
           opacity: 1; }
