@@ -20,7 +20,7 @@ Main SCSS file / Fresh
 
 .section.is-medium {
   padding: 6rem 1.5rem
-}
+} 
 
 h3 {
   text-transform: uppercase;
@@ -316,13 +316,10 @@ pre {
 }
 
 #community {
-  background: #F3F7FF;
-  background-image: linear-gradient(180deg, darken($shade0, 2.5%) 0%, $shade0 100%);
 
   .social-wrap {
     text-align: left;
     position: relative;
-    padding-left: 5rem;
 
     .icon {
       padding: 0;
