@@ -14,7 +14,7 @@ params:
   twittertype: summary_large_image
   twitterimage: images/krustlet-twitter-card.png
   font:
-    name: "Varela Rounded"
+    name: "Varela Round"
     sizes: [400,600]
   navbar:
   - title: Github

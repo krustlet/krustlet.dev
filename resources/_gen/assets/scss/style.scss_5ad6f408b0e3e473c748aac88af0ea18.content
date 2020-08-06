@@ -7251,12 +7251,17 @@ body {
   background-repeat: no-repeat;
   background-position: 150% bottom, center top;
   background-size: auto 75vh, auto auto;
-  margin-top: -7rem; }
+  margin-top: -7rem;
+  z-index: 2; }
   #intro h1,
   #intro p {
     font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.0125em;
-    color: white; }
+    color: white;
+    z-index: 600; }
+    #intro h1 strong,
+    #intro p strong {
+      color: white; }
     #intro h1 a,
     #intro p a {
       color: white; }
@@ -7391,7 +7396,7 @@ body {
   left: 0;
   right: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: 30;
   transition: all 0.3s ease-in-out; }
   .krustparty.cease {
     left: 110%;
@@ -7400,7 +7405,7 @@ body {
     position: fixed;
     right: 3rem;
     bottom: 3rem;
-    z-index: 15;
+    z-index: 350;
     border-radius: 3rem; }
     .krustparty .controls aside {
       background: #edecff;

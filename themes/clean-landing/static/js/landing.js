@@ -3,9 +3,8 @@ $(document).ready(function(){
   $.fn.randoParty = function(){ 
     alert('You have successfully randomized a party wow!');
 
-    var tLeft = Math.floor(Math.random()*(window.innerWidth)+0),
-        tTop  = Math.floor(Math.random()*(window.innerHeight)+50);
-    $(el).css({position:'absolute', left: tLeft });
+    var tLeft = Math.floor(Math.random()*(window.innerWidth)+0);
+    $(el).css({ left: tLeft });
   }
   
   // preloader
@@ -18,7 +17,7 @@ $(document).ready(function(){
     $(".wow").each(function(i,el){
       var tLeft = Math.floor(Math.random()*(window.innerWidth)+0),
         tTop  = Math.floor(Math.random()*(window.innerHeight)+50);
-      $(el).css({position:'absolute', left: tLeft });
+      $(el).css({ left: tLeft });
     });
   });
 
@@ -38,8 +37,13 @@ $(document).ready(function(){
   });
 
   // add or remove wow stuff
-  $('.controls a.fa-plus').on('click', function(){
-    $(".krustparty").append("<div class=\"wow wow-wa\"></div>");
+  var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
+  var wowRange = ['wa', 'rust', 'k8s'];
+  var randomWow = wowRange[Math.floor(Math.random()*wowRange.length)];
+  var nWow = '<span class="wow wow-' + wowRange[Math.floor(Math.random()*wowRange.length)] + '" style="left: ' + nLeft + 'px"></span>';
+
+  $('.krustparty').on('click', 'a.fa-plus', function () {
+    $(".krustparty").append(nWow);
   });
 
 });
