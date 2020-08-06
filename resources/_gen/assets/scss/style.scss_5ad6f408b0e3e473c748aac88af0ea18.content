@@ -7322,10 +7322,6 @@ body {
   .content-section blockquote {
     font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.0125em; }
-  .home-section a,
-  .content-section a {
-    padding-left: 0.425rem;
-    padding-right: 0.425rem; }
   .home-section h1, .home-section h2, .home-section h3,
   .content-section h1,
   .content-section h2,
@@ -7348,7 +7344,10 @@ body {
 #community {
   min-height: 100vh;
   position: relative;
-  background-color: #03D9D0;
+  background-image: linear-gradient(180deg, RGBA(255, 255, 255, 0.85) 0%, RGBA(189, 166, 231, 0.33) 100%), url("../images/tile.png");
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 5px 35px;
+  background-size: auto auto, 12.5% auto;
   overflow: hidden;
   min-width: 100%;
   min-height: 100vh; }
@@ -7365,27 +7364,25 @@ body {
     display: block; }
   #community .social-wrap article {
     background: white;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem 2.5rem;
     z-index: 120;
     position: relative;
     box-shadow: 0 0.25rem 0.75rem rgba(111, 94, 224, 0.25); }
     #community .social-wrap article .social-icon {
-      display: inline-block;
-      min-width: 6rem;
-      min-height: 6rem;
       text-align: center;
-      position: relative; }
+      position: absolute; }
       #community .social-wrap article .social-icon .icon {
         left: 2.25rem;
-        top: 2.5rem; }
+        top: 2.755rem; }
         #community .social-wrap article .social-icon .icon .fa {
           color: #8B4FD7; }
     #community .social-wrap article h4, #community .social-wrap article p, #community .social-wrap article dl {
       margin-left: 7.5rem; }
     #community .social-wrap article h4 {
-      margin-top: 0; }
+      margin-bottom: 1rem;
+      color: #20bc56; }
     #community .social-wrap article p {
-      font-size: 1rem; }
+      font-size: 1.125rem; }
 
 #contributors {
   background: linear-gradient(180deg, #ddccf3 0%, #f0f1f1 100%); }

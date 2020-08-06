@@ -262,11 +262,6 @@ body {
     @include varelaRound;
   }
 
-  a {
-    padding-left: 0.425rem;
-    padding-right: 0.425rem;
-  }
-
   h1, h2, h3 {
     margin: 2rem 0;
   }
@@ -290,7 +285,18 @@ body {
 #community {
   min-height: 100vh;
   position: relative;
-  background-color: $teal;
+  background-image:
+  linear-gradient(180deg, RGBA(255, 255, 255, 0.85) 0%, RGBA(189, 166, 231, 0.33) 100%),
+  url('../images/tile.png');
+  background-repeat:
+    no-repeat,
+    repeat;
+  background-position:
+    0 0,
+    5px 35px;
+  background-size:
+    auto auto,
+    12.5% auto;
   overflow: hidden;
   @include fullWidth;
 
@@ -304,21 +310,21 @@ body {
 
   .social-wrap article {
     background: white;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem 2.5rem;
     z-index: 120;
     position: relative;
     box-shadow: 0 0.25rem 0.75rem rgba(111, 94, 224, 0.25);
 
     .social-icon {
-      display: inline-block;
-      min-width: 6rem;
-      min-height: 6rem;
+      // display: inline-block;
+      // min-width: 6rem;
+      // min-height: 6rem;
       text-align: center;
-      position: relative;
+      position: absolute;
 
       .icon {
         left: 2.25rem;
-        top: 2.5rem;
+        top: 2.755rem;
   
         .fa {
           color: $purple;
@@ -331,11 +337,12 @@ body {
     }
 
     h4 {
-      margin-top: 0;
+      margin-bottom: 1rem;
+      color: darken($green, 5%);
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.125rem;
     }
   }
 
