@@ -36,16 +36,24 @@ $(document).ready(function(){
     $(this).addClass('hidden');
   });
 
-  // add or remove wow stuff
-  $('.krustparty').on('click', 'a.fa-plus', function(e) {
+  // adding wows
+  $('.krustparty').on('click', '.control-wa a.fa-plus', function(e) {
     var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
-    var wowRange = ['wa', 'rust', 'k8s'];
-    var randomWow = wowRange[Math.floor(Math.random()*wowRange.length)];
-    var nWow = '<span class="wow wow-' + randomWow + '" style="left: ' + nLeft + 'px; top: 105px;"></span>';
-
+    var nWow = '<span class="wow wow-wa" style="left: ' + nLeft + 'px; top: 70px;"></span>';
+    $(".krustparty").append(nWow);
+  });
+  $('.krustparty').on('click', '.control-rust a.fa-plus', function(e) {
+    var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
+    var nWow = '<span class="wow wow-rust" style="left: ' + nLeft + 'px; top: 70px;"></span>';
+    $(".krustparty").append(nWow);
+  });
+  $('.krustparty').on('click', '.control-k8s a.fa-plus', function(e) {
+    var nLeft = Math.floor(Math.random()*(window.innerWidth)+0);
+    var nWow = '<span class="wow wow-k8s" style="left: ' + nLeft + 'px; top: 70px;"></span>';
     $(".krustparty").append(nWow);
   });
 
+  // removing wows
   $('.krustparty').on('click', '.control-wa a.fa-minus', function(e) {
     $(".krustparty > .wow-wa:last-child").remove();
   });
