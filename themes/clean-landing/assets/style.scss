@@ -199,8 +199,9 @@ body {
     url('../images/krustlet-bg.jpg');
   background-repeat: no-repeat;
   background-position:
-    right bottom,
+    150% bottom,
     center top;
+  background-size: auto 75vh, auto auto;
   margin-top: -7rem;
 
   h1,
@@ -348,8 +349,8 @@ body {
 #footer {
   width: 100%;
   max-width: 100%;
-  border-top: 2px solid rgba(100,100,100,0.125);
   padding: 2.5rem 0 3.5rem !important;
+  border: none;
   z-index: 250;
   position: relative;
 
@@ -394,28 +395,25 @@ body {
     bottom: 3rem;
     z-index: 15;
     border-radius: 3rem;
-    overflow: hidden;
     
     aside {
       background: rgb(237,236,255);
       background: linear-gradient(0deg, rgba(237,236,255,1) 0%, rgba(255,255,255,1) 100%);
       float: left;
-      overflow-x: hidden;
       width: 1px;
       display: inline-block;
       padding: 1rem 0;
       text-align: center;
       border-right: 1px solid rgba(246, 245, 254, 1);
+      opacity: 0;
       @include transition;
 
       .hidden {
         display: none;
       }
 
-      &.begone {
-        border: none !important;
-        width: 3.333rem !important;
-        padding: 1rem 0.7rem 1rem 0.7rem !important;
+      &:first-child {
+        border-radius: 3rem 0 0 3rem;
       }
 
       img {
@@ -423,13 +421,47 @@ body {
       }
 
       .fa {
-        color: $purple;
-        opacity: 0.5;
-        margin-left: -2px;
+        color: RGBA(189, 166, 231, 1.00);
+        top: 5rem;
         @include transition;
+        position: relative;
+
+        .tooltip {
+          background: $purple;
+          color: white;
+          @include varelaRound;
+          position: absolute;
+          top: -3rem;
+          margin-left: -4rem;
+          width: auto;
+          padding: 0.75rem 1rem;
+          border-radius: 2rem;
+          min-width: 8rem;
+          text-align: center;
+          display: block;
+          opacity: 0;
+          @include transition;
+        }
 
         &:hover {
-          opacity: 1;
+          color: $purple;
+
+          .tooltip {
+            opacity: 0.92;
+            top: -4.5rem;
+          }
+        }
+      }
+
+      &.begone {
+        border: none !important;
+        width: 3.5rem !important;
+        padding: 1rem 0.7rem 1rem 0.7rem !important;
+        border-radius: 3rem;
+        opacity: 1;
+
+        .fa {
+          top: auto;
         }
       }
     }
@@ -439,6 +471,19 @@ body {
         width: 7.5rem;
         border-right: 1px solid lighten($purple, 25%);
         padding: 1rem 2rem;
+        opacity: 1;
+
+        .fa {
+          top: auto;
+        }
+      }
+
+      aside.begone {
+        border-radius: 0 3rem 3rem 0;
+
+        .fa {
+          margin-left: -2px;
+        }
       }
     }
   }
@@ -448,9 +493,9 @@ body {
       fill-opacity: 1;
       transform: rotate(0deg);
     }
-    100% { 
+    100% {
       fill-opacity: 0;
-      transform: rotate(6deg) translateY(110vh);
+      transform: rotate(7.5deg) translateY(110vh);
     }
   }
   

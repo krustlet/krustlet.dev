@@ -7249,7 +7249,8 @@ body {
   background-color: #4F5074;
   background-image: url("../images/krustlet-deco.png"), url("../images/krustlet-bg.jpg");
   background-repeat: no-repeat;
-  background-position: right bottom, center top;
+  background-position: 150% bottom, center top;
+  background-size: auto 75vh, auto auto;
   margin-top: -7rem; }
   #intro h1,
   #intro p {
@@ -7369,8 +7370,8 @@ body {
 #footer {
   width: 100%;
   max-width: 100%;
-  border-top: 2px solid rgba(100, 100, 100, 0.125);
   padding: 2.5rem 0 3.5rem !important;
+  border: none;
   z-index: 250;
   position: relative; }
   #footer .columns {
@@ -7400,38 +7401,69 @@ body {
     right: 3rem;
     bottom: 3rem;
     z-index: 15;
-    border-radius: 3rem;
-    overflow: hidden; }
+    border-radius: 3rem; }
     .krustparty .controls aside {
       background: #edecff;
       background: linear-gradient(0deg, #edecff 0%, white 100%);
       float: left;
-      overflow-x: hidden;
       width: 1px;
       display: inline-block;
       padding: 1rem 0;
       text-align: center;
       border-right: 1px solid #f6f5fe;
+      opacity: 0;
       transition: all 0.3s ease-in-out; }
       .krustparty .controls aside .hidden {
         display: none; }
-      .krustparty .controls aside.begone {
-        border: none !important;
-        width: 3.333rem !important;
-        padding: 1rem 0.7rem 1rem 0.7rem !important; }
+      .krustparty .controls aside:first-child {
+        border-radius: 3rem 0 0 3rem; }
       .krustparty .controls aside img {
         margin: 0 0.75rem; }
       .krustparty .controls aside .fa {
-        color: #8B4FD7;
-        opacity: 0.5;
-        margin-left: -2px;
-        transition: all 0.3s ease-in-out; }
+        color: RGBA(189, 166, 231, 1);
+        top: 5rem;
+        transition: all 0.3s ease-in-out;
+        position: relative; }
+        .krustparty .controls aside .fa .tooltip {
+          background: #8B4FD7;
+          color: white;
+          font-family: 'Varela Round', sans-serif;
+          letter-spacing: 0.0125em;
+          position: absolute;
+          top: -3rem;
+          margin-left: -4rem;
+          width: auto;
+          padding: 0.75rem 1rem;
+          border-radius: 2rem;
+          min-width: 8rem;
+          text-align: center;
+          display: block;
+          opacity: 0;
+          transition: all 0.3s ease-in-out; }
         .krustparty .controls aside .fa:hover {
-          opacity: 1; }
+          color: #8B4FD7; }
+          .krustparty .controls aside .fa:hover .tooltip {
+            opacity: 0.92;
+            top: -4.5rem; }
+      .krustparty .controls aside.begone {
+        border: none !important;
+        width: 3.5rem !important;
+        padding: 1rem 0.7rem 1rem 0.7rem !important;
+        border-radius: 3rem;
+        opacity: 1; }
+        .krustparty .controls aside.begone .fa {
+          top: auto; }
     .krustparty .controls.active aside {
       width: 7.5rem;
       border-right: 1px solid #cfb7ef;
-      padding: 1rem 2rem; }
+      padding: 1rem 2rem;
+      opacity: 1; }
+      .krustparty .controls.active aside .fa {
+        top: auto; }
+    .krustparty .controls.active aside.begone {
+      border-radius: 0 3rem 3rem 0; }
+      .krustparty .controls.active aside.begone .fa {
+        margin-left: -2px; }
 
 @keyframes wowzers {
   0% {
@@ -7439,7 +7471,7 @@ body {
     transform: rotate(0deg); }
   100% {
     fill-opacity: 0;
-    transform: rotate(6deg) translateY(110vh); } }
+    transform: rotate(7.5deg) translateY(110vh); } }
   .krustparty span.wow {
     content: " ";
     position: absolute;
