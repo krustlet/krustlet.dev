@@ -32,8 +32,6 @@ Looking for logos? Latest brand assets for OSM can be found in the [/art](https:
 
 The website is broken up into html partials per section (e.g. navbar, footer, about, community). To edit the content, you need to modify [these source html files](https://github.com/deislabs/krustlet.dev/tree/master/themes/clean-landing/layouts/partials) in the site theme.
 
-*Do not make edits** to the code in the `/public` directory, this is overwritten each time the site is rebuilt!
-
 In addition, certain pieces of content are set globally via the [config.yaml](https://github.com/deislabs/krustlet.dev/blob/master/config.yaml#L10) file:
 
 * site descrition
