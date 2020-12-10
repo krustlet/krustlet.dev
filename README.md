@@ -15,7 +15,7 @@ There are various parts to a hugo site, these are the key bits:
 config.yaml
 ```
 
-Looking for logos? Latest brand assets for OSM can be found in the [/art](https://github.com/deislabs/krustlet.dev/tree/master/art) directory.
+Looking for logos? Latest brand assets for Krustlet can be found in the [/art](https://github.com/deislabs/krustlet.dev/tree/master/art) directory.
 
 
 ## Development
