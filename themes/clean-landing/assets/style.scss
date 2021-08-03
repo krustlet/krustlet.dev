@@ -376,10 +376,14 @@ body {
   }
 }
 
+.cncf-wrap {
+  max-width: 100%;
+}
+
 #footer {
   width: 100%;
   max-width: 100%;
-  padding: 2.5rem 0 3.5rem !important;
+  padding: 2.5rem 0 0 !important;
   border: none;
   z-index: 250;
   position: relative;
@@ -393,11 +397,38 @@ body {
 
   img {
     max-width: 12.5vw;
-  };
+  }
 
   .navbar-menu {
     direction: ltr;
+    margin-bottom: 4rem;
+  }
 
+  .cncf {
+    background: desaturate(#f0f0f0, 50%);
+    min-height: 7rem;
+    text-align: center;
+    padding-left: 100px;
+    margin-bottom: 0;
+    border-top: 1px solid #fff;
+  
+    img {
+      float: left;
+      display: inline-block;
+      max-width: 10rem;
+      margin: 1.5rem 0 1.5rem 7.5%;
+    }
+  
+    p {
+      float: right;
+      margin: 1.5rem 210px 0 0;
+      display: inline-block;
+      color: $darkgrey;
+  
+      &:hover {
+        color: $teal;
+      }
+    }
   }
 }
 
