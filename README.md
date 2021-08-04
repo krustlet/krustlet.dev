@@ -1,6 +1,6 @@
 # krustlet.dev
 
-![krustlet-website](https://github.com/deislabs/krustlet.dev/blob/main/art/styleguide/website.jpg?raw=true)
+![krustlet-website](https://github.com/krustlet/krustlet.dev/blob/main/art/styleguide/website.jpg?raw=true)
 
 Welcome to the source file repository for the [krustlet.dev](https://krustlet.dev). The website is a simple static site, built with [Hugo](https://gohugo.io/) and hosted on [Netlify](https://app.netlify.com/sites/krustlet-dev/).
 
@@ -15,7 +15,7 @@ There are various parts to a hugo site, these are the key bits:
 config.yaml
 ```
 
-Looking for logos? Latest brand assets for Krustlet can be found in the [/art](https://github.com/deislabs/krustlet.dev/tree/main/art) directory.
+Looking for logos? Latest brand assets for Krustlet can be found in the [/art](https://github.com/krustlet/krustlet.dev/tree/main/art) directory.
 
 ## Development
 
@@ -29,9 +29,9 @@ $ git add resources/*
 
 ### Editing the Content
 
-The website is broken up into html partials per section (e.g. navbar, footer, about, community). To edit the content, you need to modify [these source html files](https://github.com/deislabs/krustlet.dev/tree/main/themes/clean-landing/layouts/partials) in the site theme.
+The website is broken up into html partials per section (e.g. navbar, footer, about, community). To edit the content, you need to modify [these source html files](https://github.com/krustlet/krustlet.dev/tree/main/themes/clean-landing/layouts/partials) in the site theme.
 
-In addition, certain pieces of content are set globally via the [config.yaml](https://github.com/deislabs/krustlet.dev/blob/main/config.yaml#L10) file:
+In addition, certain pieces of content are set globally via the [config.yaml](https://github.com/krustlet/krustlet.dev/blob/main/config.yaml#L10) file:
 
 * site descrition
 * site webfonts
@@ -43,7 +43,7 @@ In addition, certain pieces of content are set globally via the [config.yaml](ht
 
 The site uses a custom Hugo theme called [clean-landing], which is a boilerplate based off of the [hugo-fresh](https://themes.gohugo.io/hugo-fresh/) theme by Luc Perkins. The theme uses the Bulma css framework, which provides a mobile-friendly reponsive grid (using flexbox), icon sets and easily configurable site parameters.
 
-* [Theme parameters](https://github.com/deislabs/krustlet.dev/blob/main/config.yaml#L10)
+* [Theme parameters](https://github.com/krustlet/krustlet.dev/blob/main/config.yaml#L10)
 * [Bulma CSS docs](https://bulma.io/)
 
 Any design changes should be to the source SASS files here, which are will generate new CSS files each time Hugo recompiles, via [hugo pipes](https://gohugo.io/hugo-pipes/). Remember to commit any changes to the generated css/js files afterwards (the `/resources` folder)!

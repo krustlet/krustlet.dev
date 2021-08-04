@@ -19,6 +19,8 @@ params:
   navbar:
   - title: Github
     url: https://github.com/deislabs/krustlet
+  - title: Docs
+    url: https://docs.krustlet.dev
   - title: Blog
     url: https://deislabs.io/tags/krustlet/
   - title: Slack
