@@ -17,8 +17,8 @@ params:
     name: "Varela Round"
     sizes: [400,600]
   navbar:
-  - title: Github
-    url: https://github.com/deislabs/krustlet
+  - title: GitHub
+    url: https://github.com/krustlet/krustlet
   - title: Docs
     url: https://docs.krustlet.dev
   - title: Blog
